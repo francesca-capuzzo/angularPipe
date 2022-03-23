@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { User } from './model/user';
 
 @Component({
@@ -6,19 +7,11 @@ import { User } from './model/user';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   
   title = 'angular-pipe';
 
-  public users: User[] = [
-    {name: "fjoralba", ranking: 1},
-    {name: "simone", ranking: 5},
-    {name: "matteo", ranking: 4},
-    {name: "marco", ranking: 3},
-    {name: "lorenzo", ranking: 2},
-    {name: "alessandro", ranking: 7},
-    {name: "andrea", ranking: 6},
-  ];
+  public users: User[] = []
 
   // public listData: any = {};              //oggetto generico JS
   public listData: listData;                 //interfaccia (scritta infondo alla pagine)
@@ -27,11 +20,19 @@ export class AppComponent {
 
 
 
-  constructor(){
+  constructor(private http: HttpClient){
     // this.listData.background = "green";    //background diventerà proprietà di listData (oggetto generico JS che si prende tutte le proprietà senza specificarne il tipo)
     // this.listData.usersArray = this.users; //usersArray diventerà proprietà di listData (oggetto generico JS che si prende tutte le proprietà senza specificarne il tipo)
 
     this.listData = {background: "green", usersArrayInt: this.users} //sto dicendo che this.users è linkato a this.listData
+  }
+
+
+  ngOnInit(): void {
+    this.http.get<User[]>("./assets/users.json").subscribe(users => { //metodo per prendere le risorse dal json
+      this.users = users;
+      this.listData.usersArrayInt = this.users;                       //anche qui va inizializzato di nuovo l'array di users(vuoto) = alla listData.usersArrayInt
+    }); 
   }
 
 
@@ -40,7 +41,7 @@ export class AppComponent {
   onUserChanged(){
     // console.log("changed user");
     this.users[0].name = "marta";
-    this.listData.usersArrayInt = this.users;
+    this.listData.usersArrayInt = this.users;         //resetto la reference
   }
 
   onArrayChanged(usersArray: User[]){
@@ -52,7 +53,7 @@ export class AppComponent {
   onUserAdded(user: User){
     // console.log("added user", user);
     this.users.push(user);
-    this.listData.usersArrayInt = this.users;
+    this.listData.usersArrayInt = this.users;         //resetto la reference
   }
 
 

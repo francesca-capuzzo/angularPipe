@@ -20,6 +20,17 @@ export class ListComponent implements OnInit{
   }
 
 
+                                                        //NB UTILIZZARE UN METODO DEL GENERE è SEMPRE SCONSIGLIATO RISPETTO ALL'UTILIZZO DI UN PIPE PERCHè LE CHIAMATE VENGONO FATTE PIù VOLTE!!! --> MOLTO TIME CONSUMING 
+                                                        //per questo si fa un ng generate pipe + nome del pipe --> viene generato un file.pipe.ts
+  capitalizeFirstLetter(word: string): string{
+    console.log("pippo");                               //nonostante ci siano 7 users, pippo logga 28 volte perchè continua a controllare gli utenti
+    const firstChar = word[0].toUpperCase();
+    const remainingChars = word.slice(1);
+    return firstChar + remainingChars;
+  }
+
+
+
   // changeUser(){
   //   this.userList[0].name = "marta";
   // }
