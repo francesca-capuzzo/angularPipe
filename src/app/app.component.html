@@ -1,0 +1,15 @@
+<h1>Angular Pipe</h1>
+
+<app-list 
+[listBackgroundColor]="listData.background" 
+[userList]="listData.usersArrayInt"
+></app-list> <!--input userList di appListComponent da users di appComponent-->
+
+<app-buttons 
+(userChanged)="onUserChanged()"          
+(arrayChanged)="onArrayChanged($event)"
+(userAdded)="onUserAdded($event)"
+></app-buttons>
+<!--output (funzione) del buttonComponent che emette un evento (output = eventEmitter) che viene letto dalla ="funzione()" dell'appComponent-->
+
+<router-outlet></router-outlet>
