@@ -20,4 +20,8 @@ export class SharedModule { }
 
 
 /*
-IMPORTO QUI TUTTI I PEZZI CHE UTILIZZO O POSSO UTILIZZARE PER DIVERSI COMPONENTI -> è lo stesso di metterlo direttamente nell'app.module però in questo modo i componenti possono essere esportati e riutizzati senza bisogno di copiare altra roba */
+IMPORTO QUI TUTTI I PEZZI CHE UTILIZZO O POSSO UTILIZZARE PER DIVERSI COMPONENTI:
+-> è lo stesso di metterlo direttamente nell'app.module però in questo modo i componenti possono essere esportati e riutizzati senza bisogno di copiare altra roba 
+-> è fondamentale stare attenti agli import e export di tutti i componenti e moduli
+ 
+*/
