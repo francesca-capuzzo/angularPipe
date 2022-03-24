@@ -40,6 +40,12 @@ import { StringDirective } from './directives/string.directive';
     HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] //modulo di boot dell'applicazione --> <app-root> che è nell'index.html
+  /*
+  in molti casi serve più di un modulo per il boot:
+  1- per esportare componenti utili in altre applicazioni
+  2- per avere meno imports nell'app module -> codice più leggibile ed elegante
+  3- per il LAZY LOADING -> l'app angular viene impacchettata in unico .js quando viene compressa, e diventa un modulo molto pesante che il browser deve scaricare prima di avviarsi --> vengono scomposte le pagine e caricate singolarmente e finchè l'utente non fa il routing ad un altra pagina, quella non viene caricata
+  */ 
 })
 export class AppModule { }
