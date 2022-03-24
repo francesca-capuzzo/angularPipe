@@ -12,6 +12,10 @@ import { SortUsersByNamePipe } from './pipes/sort-users-by-name.pipe';
 import { SortGenericPipe } from './pipes/sort-generic.pipe';
 import { BlackBackgroundDirective } from './directives/black-background.directive';
 import { BackgroundDirective } from './directives/background.directive';
+import { ResizingDirective } from './directives/resizing.directive';
+import { ExistDirective } from './directives/exist.directive';
+import { StringDirective } from './directives/string.directive';
+
 
 
 @NgModule({
@@ -25,6 +29,9 @@ import { BackgroundDirective } from './directives/background.directive';
     SortGenericPipe,
     BlackBackgroundDirective,
     BackgroundDirective,
+    ResizingDirective,
+    ExistDirective,
+    StringDirective,
 
   ],
   imports: [

@@ -21,7 +21,6 @@ export class AppComponent implements OnInit{
   public titleColor = "yellow";
 
 
-
   constructor(private http: HttpClient){
     // this.listData.background = "green";    //background diventerà proprietà di listData (oggetto generico JS che si prende tutte le proprietà senza specificarne il tipo)
     // this.listData.usersArray = this.users; //usersArray diventerà proprietà di listData (oggetto generico JS che si prende tutte le proprietà senza specificarne il tipo)
