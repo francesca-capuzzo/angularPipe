@@ -11,7 +11,7 @@ export class SortUsersByRankingPipe implements PipeTransform {
 
   transform(value: User[], ...args: string[]): User[] {
     if (args.length > 0) {
-      let order = args[0];
+      let order = args[0]; //args[0] è il nome della property
       if (order === "ascending") {
         return value.sort((a, b) => a.ranking - b.ranking);
       }else{

@@ -1,4 +1,6 @@
-<h1>Angular Pipe</h1>
+<!-- <h1 appBlackBackground>Angular Pipe</h1> -->
+<h1 [appBackground]="titleColor">Angular Pipe</h1>
+
 
 <app-list 
 [listBackgroundColor]="listData.background" 
@@ -13,3 +15,6 @@
 <!--output (funzione) del buttonComponent che emette un evento (output = eventEmitter) che viene letto dalla ="funzione()" dell'appComponent-->
 
 <router-outlet></router-outlet>
+
+
+

@@ -10,6 +10,8 @@ import { CapitalizeFirstPipe } from './pipes/capitalize-first.pipe';
 import { SortUsersByRankingPipe } from './pipes/sort-users-by-ranking.pipe';
 import { SortUsersByNamePipe } from './pipes/sort-users-by-name.pipe';
 import { SortGenericPipe } from './pipes/sort-generic.pipe';
+import { BlackBackgroundDirective } from './directives/black-background.directive';
+import { BackgroundDirective } from './directives/background.directive';
 
 
 @NgModule({
@@ -21,6 +23,8 @@ import { SortGenericPipe } from './pipes/sort-generic.pipe';
     SortUsersByRankingPipe,
     SortUsersByNamePipe,
     SortGenericPipe,
+    BlackBackgroundDirective,
+    BackgroundDirective,
 
   ],
   imports: [

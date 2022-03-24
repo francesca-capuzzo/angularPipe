@@ -18,6 +18,8 @@ export class AppComponent implements OnInit{
 
   // public listBackgroundColor:string = "green";
 
+  public titleColor = "yellow";
+
 
 
   constructor(private http: HttpClient){
