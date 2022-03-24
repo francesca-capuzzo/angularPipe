@@ -13,6 +13,7 @@ import { ResizingDirective } from './directives/resizing.directive';
 import { ExistDirective } from './directives/exist.directive';
 import { StringDirective } from './directives/string.directive';
 import { ListModule } from './components/list/module/list.module';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -34,6 +35,7 @@ import { ListModule } from './components/list/module/list.module';
     AppRoutingModule,
     HttpClientModule,
     ListModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent] //modulo di boot dell'applicazione --> <app-root> che è nell'index.html
